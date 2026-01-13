@@ -25,4 +25,4 @@ jobs:
       - name: Run log analysis
         id: test
         if: always()
-        uses: ./.github/actions/my-action
+        uses: Bhuwan-web/dependency_fetcher@main
