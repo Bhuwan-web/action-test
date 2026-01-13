@@ -7,6 +7,6 @@ runs:
   steps:
     - name: Fetch dependency graph
       run: |
-        cd ${{ github.workflow }}
+        echo ${{ github}}
         npm list --depth=10
       shell: bash 
