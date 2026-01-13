@@ -6,6 +6,10 @@ inputs:
   message:
     description: 'Message to print'
     required: true
+  repo_path:
+    description: 'Repository path'
+    required: false
+    default: '.'
 
 runs:
   using: 'composite'
