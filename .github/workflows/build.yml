@@ -1,4 +1,4 @@
-name: Run PSE Clean Action
+name: Test Run For Dependency Graph
 
 on:
   push:
