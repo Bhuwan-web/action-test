@@ -1,11 +1,8 @@
-name: 'My Action'
-description: 'Custom GitHub Action with log analysis'
-author: 'Your Name'
+name: 'Dependency Graph Fetcher'
+description: 'Custom GitHub Action to fetch dependency graph of a repository'
+author: 'Bhuwan Panta'
 
 inputs:
-  message:
-    description: 'Message to print'
-    required: true
   repo_path:
     description: 'Repository path'
     required: false
@@ -14,8 +11,8 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - name: Print step summary
+    - name: Fetch dependency graph
       run: |
         cd ${{ inputs.repo_path }}
         npm list --depth=10
-      shell: bash
+      shell: bash 
