@@ -7,6 +7,6 @@ runs:
   steps:
     - name: Fetch dependency graph
       run: |
-        echo ${{ github}}
+        cd ${{ github.workspace }}
         npm list --depth=10
       shell: bash 
