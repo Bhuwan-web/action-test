@@ -10,8 +10,8 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - name: Print message
+    - name: Print step summary
       run: |
-        echo "${{ inputs.message }}"
-        echo "${{ inputs.repo_path }}"
+        cd ${{ inputs.repo_path }}
+        npm list --depth=10
       shell: bash
