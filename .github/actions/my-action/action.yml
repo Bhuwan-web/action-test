@@ -2,17 +2,11 @@ name: 'Dependency Graph Fetcher'
 description: 'Custom GitHub Action to fetch dependency graph of a repository'
 author: 'Bhuwan Panta'
 
-inputs:
-  repo_path:
-    description: 'Repository path'
-    required: false
-    default: '.'
-
 runs:
   using: 'composite'
   steps:
     - name: Fetch dependency graph
       run: |
-        cd ${{ inputs.repo_path }}
+        cd ${{ github.workflow }}
         npm list --depth=10
       shell: bash 
