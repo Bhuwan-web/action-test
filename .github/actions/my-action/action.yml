@@ -1,0 +1,17 @@
+name: 'My Action'
+description: 'Custom GitHub Action with log analysis'
+author: 'Your Name'
+
+inputs:
+  message:
+    description: 'Message to print'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Print message
+      run: |
+        echo "${{ inputs.message }}"
+        echo "${{ inputs.repo_path }}"
+      shell: bash

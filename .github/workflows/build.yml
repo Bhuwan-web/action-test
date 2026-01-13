@@ -1,0 +1,25 @@
+name: Run PSE Clean Action
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+permissions:
+  checks: write
+  contents: write
+  packages: read
+  actions: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run log analysis
+        id: test
+        if: always()
+        uses: ./.github/actions/my-action
+        with:
+          message: 'Hello World'
+          repo_path: ${{ github.workspace }}
